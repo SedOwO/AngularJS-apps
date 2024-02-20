@@ -1,5 +1,22 @@
-# ANJS 1
-## Program 1: Develop AngularJS program that allows user to input their firstname and lastname and display their full name. Note: The default values for first name and lastname may be included in the program.
+# ANJS
+## INDEX
+* **[Program 1 - nameApp](#program-1)**
+* **[Program 2 - shoppingApp](#program-2)**
+* **[Program 3 - calculatorApp](#program-3)**
+* **[Program 4 - mathApp](#program-4)**
+* **[Program 5 - studentApp](#program-5)**
+* **[Program 6 - todoApp](#program-6)**
+* **[Program 7 - crudApp](#program-7)**
+* **[Program 8 - loginApp](#program-8)**
+* **[Program 9 - employeeApp](#program-9)**
+* **[Program 10 - itemApp](#program-10)**
+* **[Program 11- studentApp](#program-11)**
+* **[Program 12 - dateApp](#program-12)**
+
+<div class="page"/> 
+
+## [Program 1](#index)
+### Develop AngularJS program that allows user to input their firstname and lastname and display their full name. Note: The default values for first name and lastname may be included in the program.
 ```html
 <html ng-app="nameApp">
 
@@ -40,7 +57,8 @@
 ```
 <div class="page"/> 
 
-## Program 2: Develop an Angular JS application that displays a list of shopping items. Allow users to add and remove items from the list using directives and controllers.Note: The default values of items may be included inthe program.
+## [Program 2](#index)
+### Develop an Angular JS application that displays a list of shopping items. Allow users to add and remove items from the list using directives and controllers.Note: The default values of items may be included inthe program.
 ```html
 <html ng-app="shoppingApp">
 
@@ -84,7 +102,8 @@
 ```
 <div class="page"/> 
 
-## Program 3: Develop a simple Angular JS calculator application that can perform basic mathematical operations(addition, subtraction, multiplication, division) based on user input.
+## [Program 3](#index)
+### Develop a simple Angular JS calculator application that can perform basic mathematical operations(addition, subtraction, multiplication, division) based on user input.
 ```html
 <html ng-app="calculatorApp">
 
@@ -139,7 +158,8 @@
 ```
 <div class="page"/> 
 
-## Program 4: Write an Angular JS application that can calculate factorial and compute square based on given user input.
+## [Program 4](#index)
+### Write an Angular JS application that can calculate factorial and compute square based on given user input.
 ```html
 <html ng-app="mathApp">
 
@@ -184,7 +204,8 @@
 ```
 <div class="page"/> 
 
-## Program 5: Develop AngularJS application that displays a details of students and their CGPA. Allow users to read the number of students and display the count. Note: Student details may be included in the program.
+## [Program 5](#index)
+### Develop AngularJS application that displays a details of students and their CGPA. Allow users to read the number of students and display the count. Note: Student details may be included in the program.
 ```html
 <html ng-app="studentApp">
 
@@ -230,7 +251,8 @@
 ```
 <div class="page"/>  
 
-## Program 6: Develop an AngularJS program to create a simple to-do list application. Allow users to add, edit, and delete tasks. Note: The default values for tasks may be included in the program.
+## [Program 6](#index)
+### Develop an AngularJS program to create a simple to-do list application. Allow users to add, edit, and delete tasks. Note: The default values for tasks may be included in the program.
 ```html
 <html ng-app="todoApp">
 
@@ -299,7 +321,8 @@
 ```
 <div class="page"/>  
 
-## Program 7: Write an AngularJS program to create a simple CRUD application (Create, Read, Update, and Delete) for managing users
+## [Program 7](#index)
+### Write an AngularJS program to create a simple CRUD application (Create, Read, Update, and Delete) for managing users
 ```html
 <html ng-app="crudApp">
 
@@ -363,7 +386,8 @@
 ```
 <div class="page"/> 
 
-## Program 8: Develop AngularJS program to create a login form, with validation for the username and password fields.
+## [Program 8](#index)
+### Develop AngularJS program to create a login form, with validation for the username and password fields.
 ```html
 <html ng-app="loginApp">
 
@@ -405,7 +429,8 @@
 ```
 <div class="page"/>
 
-## Program 9: Create an AngularJS application that displays a list of employees and their salaries. Allow users to searchfor employees by name and salary. Note: Employee details may be included in the program.
+## [Program 9](#index)
+### Create an AngularJS application that displays a list of employees and their salaries. Allow users to search for employees by name and salary. Note: Employee details may be included in the program.
 ```html
 <html ng-app="employeeApp">
 
@@ -417,9 +442,9 @@
 <body ng-controller="employeeCtrl">
     <h2>Employee List</h2>
     Search by Name:
-    <input type="text" ng-model="searchName" /> <br>
+    <input type="text" ng-model="searchName"> <br>
     Search by Salary:
-    <input type="number" ng-model="searchSalary" />
+    <input type="number" ng-model="searchSalary">
     <ul>
         <li ng-repeat="employee in employees | filter: {name: searchName, salary: searchSalary}">
             {{ employee.name }} - Salary: Rs {{ employee.salary }}
@@ -444,7 +469,8 @@
 ```
 <div class="page"/>
 
-## Program 10: Create Angular JS application that allows users to maintain a collection of items. The application should display the current total number of items, and this count should automatically update as items are added or removed. Users should be able to add items to the collection and remove them as needed. Note: The default values for items may be included in the program.
+## [Program 10](#index)
+### Create Angular JS application that allows users to maintain a collection of items. The application should display the current total number of items, and this count should automatically update as items are added or removed. Users should be able to add items to the collection and remove them as needed. Note: The default values for items may be included in the program.
 ```html
 <html ng-app="itemApp">
 
@@ -456,7 +482,7 @@
 <body ng-controller="itemCtrl">
     <h2>ItemCollection</h2>
     Add New Item:
-    <input type="text" ng-model="newItem" />
+    <input type="text" ng-model="newItem">
 
     <button ng-click="addItem()">Add Item</button>
     <ul>
@@ -470,12 +496,12 @@
     <script>
         angular.module('itemApp', [])
             .controller('itemCtrl', function ($scope) {
-                $scope.items = ['Item1', 'Item2', 'Item3'];//Defaultitems
+                $scope.items = ['Item1', 'Item2', 'Item3']; //Default items
                 $scope.newItem = '';
                 $scope.addItem = function () {
                     if ($scope.newItem) {
                         $scope.items.push($scope.newItem);
-                        $scope.newItem = '';//Cleartheinputfield
+                        $scope.newItem = ''; //Clear the input field
                     }
                 };
                 $scope.removeItem = function (index) {
@@ -489,7 +515,8 @@
 ```
 <div class="page"/>
 
-## Program 11: Create AngularJS application to convert student details to upper case using angular filters. Note: The default details of students may be included in the program.
+## [Program 11](#index)
+### Create AngularJS application to convert student details to upper case using angular filters. Note: The default details of students may be included in the program.
 ```html
 <html ng-app="studentApp">
 
@@ -528,7 +555,8 @@
 ```
 <div class="page"/> 
 
-## Program 12: Create an AngularJS  application that displays the date by using date filter parameters
+## [Program 12](#index)
+### Create an AngularJS  application that displays the date by using date filter parameters
 ```html
 <html ng-app="dateApp">
 
@@ -555,3 +583,8 @@
 
 </html>
 ```
+<style>
+    a {
+        color: black;
+    }
+</style>
