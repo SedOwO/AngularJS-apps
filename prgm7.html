@@ -1,0 +1,65 @@
+<!-- 
+	Program 7:
+	Write an AngularJS program to create a simple 
+	CRUD application (Create, Read, Update, and Delete) 
+	for managing users. 
+-->
+<html ng-app="crudApp">
+
+<head>
+    <title>crud Application</title>
+    <script src="angularMinified.js"></script>
+</head>
+
+<body ng-controller="crudCtrl">
+    <h1>User Management</h1>
+
+    <form ng-submit="addUser()">
+        User:
+        <input type="text" ng-model="name" requied><br>
+        Age:
+        <input type="number" ng-model="age" required><br>
+        <button type="submit">Add User</button>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="user in users">
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>
+                <button ng-click="editTask($index)">Edit</button>
+                <button ng-click="deleteTask($index)">Delete</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        angular.module('crudApp', [])
+            .controller('crudCtrl', function ($scope) {
+                $scope.users = [
+                    { name: 'user1', age: 25 },
+                    { name: 'uesr2', age: 30 }
+                ];
+                $scope.addUser = function () {
+                    $scope.users.push({ name: $scope.name, age: $scope.age });
+                };
+
+                $scope.editTask = function ($index) {
+                    var tmpName = prompt("Enter the new name");
+                    var tmpAge = prompt("Enter the new age");
+                    // $scope.users.splice($index, 1, {name: tmpName, age: tmpAge});
+                    $scope.users[$index] = { name: tmpName, age: tmpAge };
+                };
+
+                $scope.deleteTask = function ($index) {
+                    $scope.users.splice($index, 1);
+                };
+            });
+    </script>
+</body>
+
+</html>

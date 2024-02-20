@@ -1,0 +1,48 @@
+<!--
+    Program 5:
+    Develop AngularJS application that displays a details 
+    of students and their CGPA. Allow users to read the 
+    number of students and display the count. 
+    Note: Student details may be included in the program. 
+-->
+<html ng-app="studentApp">
+
+<head>
+    <title>AngularJS Student Details</title>
+    <script src="angularMinified.js"></script>
+</head>
+
+<body ng-controller="studentCtrl">
+    <h2>Student Details</h2>
+    Student Name:
+    <input type="text" ng-model="name">
+    CGPA:
+    <input type="number" ng-model="cgpa" ng-min="1" ng-max="10">
+    <button ng-click="addStudent()">Add Student</button>
+    <p>Total Students: {{ students.length }}</p>
+    <ul>
+        <li ng-repeat="student in students">
+            {{ student.name }} - CGPA: {{ student.cgpa }}
+        </li>
+
+    </ul>
+    <script>
+        angular.module('studentApp', [])
+            .controller('studentCtrl', function ($scope) {
+                $scope.students = [];
+                $scope.addStudent = function () {
+                    if ($scope.name && $scope.cgpa) {
+                        $scope.students.push({
+                            name: $scope.name,
+                            cgpa: $scope.cgpa
+                        });
+                        // Clear the input fields
+                        $scope.name = '';
+                        $scope.cgpa = '';
+                    }
+                };
+            });
+    </script>
+</body>
+
+</html>

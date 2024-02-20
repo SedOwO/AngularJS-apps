@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="angularMinified.js"></script>
+	<style>
+		body {
+			animation: changeColor 0.125s infinite;
+			/* Change color every 5 seconds, repeat infinitely */
+		}
+
+		@keyframes changeColor {
+			0% {
+				background-color: #ff0000;
+				/* Start with red */
+			}
+
+			25% {
+				background-color: #00ff00;
+				/* Change to green after 25% of the animation duration */
+			}
+
+			50% {
+				background-color: #0000ff;
+				/* Change to blue after 50% of the animation duration */
+			}
+
+			75% {
+				background-color: #ffff00;
+				/* Change to yellow after 75% of the animation duration */
+			}
+
+			100% {
+				background-color: #ff00ff;
+				/* End with magenta */
+			}
+		}
+	</style>
+</head>
+
+<body ng-app bgcolor="{{c}}">
+	Enter your good name
+	<input type="text" placeholder="Enter name" ng-model="name"> <br> <br>
+	Enter a number above 100
+	<input type="number" placeholder="Enter number" ng-model="n1" min="100" max="300"> <br> <br>
+	Enter u email
+	<input type="email" ng-model="e"> <br> <br>
+	Select a date
+	<input type="date" ng-model="d"> <br> <br>
+	select color
+	<input type="color" ng-model="c"> <br> <br>
+	enter pasword
+	<input type="password" ng-model="p"> <br> <br>
+
+	select gender
+	<input type="radio" name="gender" value="m" ng-model="a"> male
+	<input type="radio" name="gender" value="f" ng-model="a"> female
+	<input type="radio" name="gender" value="o" ng-model="a"> other <br><br>
+
+
+	<font color="{{c}}">
+		<h1> {{p}}</h1>
+		<h1> {{c}}</h1>
+		<h1> {{d}}</h1>
+		<h1> {{name}}</h1>
+		<h1> {{n1}}</h1>
+		<h1> {{e}}</h1>
+		<h1> {{a}}</h1>
+	</font>
+</body>
+
+</html>
