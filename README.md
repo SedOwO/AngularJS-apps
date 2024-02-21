@@ -595,8 +595,3 @@
 
 </html>
 ```
-<style>
-    a {
-        color: black;
-    }
-</style>
